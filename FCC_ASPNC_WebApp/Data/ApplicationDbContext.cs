@@ -15,6 +15,10 @@ namespace FCC_ASPNC_WebApp.Data
 
         }
 
+        //DB Set For Categories Entity/Table
         public DbSet<Category> Categories { get; set; }
+
+        //DB set for Application Type Entity/Table
+        public DbSet<ApplicationType> ApplicationTypes { get; set; }
     }
 }
