@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using FCC_ASPNC_WebApp.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace FCC_ASPNC_WebApp
 {
@@ -23,6 +25,12 @@ namespace FCC_ASPNC_WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Adding DB context
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+ 
+
             services.AddControllersWithViews();
         }
 
