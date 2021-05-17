@@ -10,8 +10,11 @@
         <div class="col-6">
              <h2 class="text-primary">Category List</h2>   
         </div>
-        <div class="col-6">
-            Create New Category
+        <div class="col-6 text-right">
+            <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
+                Create New Category
+            </a> 
+            
         </div>
     </div>
     <br /><br />
@@ -34,7 +37,6 @@
                         <tr>
                             <td width="50%">@obj.Name</td>
                             <td width="50%">@obj.DisplayOrder</td>
-                            <td></td>
                         </tr>
                         }
                     </tbody>

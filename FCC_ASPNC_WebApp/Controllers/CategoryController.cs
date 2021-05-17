@@ -37,5 +37,27 @@ namespace FCC_ASPNC_WebApp.Controllers
             IEnumerable<Category> objList = _db.Categories;
             return View(objList);
         }
+
+        // GET FOR CREATE 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST FOR CREATE
+        // Defining method as a HTTP POST 
+        [HttpPost]
+        //Built in mechanism where it appends an anti forgery token and there are no security tampers
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Category obj)
+        {
+            //Add new information to database
+            _db.Categories.Add(obj);
+            //Commit to database 
+            _db.SaveChanges();
+            
+            //Returns to Index action in this controller
+            return RedirectToAction("Index");
+        }
     }
 }
