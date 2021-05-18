@@ -65,5 +65,52 @@ namespace FCC_ASPNC_WebApp.Controllers
             return View(obj);
 
         }
+
+        // GET FOR EDIT - Takes id from the database element
+        public IActionResult Edit(int id)
+        {
+            //validation for checking id has been retrieved successfully
+            if(id==null || id == 0)
+            {
+                //if invalid return not found
+                return NotFound();
+            }
+            //Create a new var an dassign a DB SELECT query passing in the ID as a parameter to search
+            var obj = _db.Categories.Find(id);
+            // if the null
+            if (obj == null)
+            {
+                //return not found
+                return NotFound();
+            }
+            // if all validation is met return the edit view and pass retrieved object over to it
+            return View(obj);
+        }
+
+
+        // POST FOR EDIT
+        // Defining method as a HTTP POST 
+        [HttpPost]
+        //Built in mechanism where it appends an anti forgery token and there are no security tampers
+        [ValidateAntiForgeryToken]
+
+        //if this is a complex object with several objects within it this will cause an error GO TO LINE 1 IN EDIT VIEW FOR EXPLANATION
+        public IActionResult Edit(Category obj)
+        {
+            //Checks if validation from model is met
+            if (ModelState.IsValid)
+            {
+                //Update information to database
+                _db.Categories.Update(obj);
+                //Commit to database 
+                _db.SaveChanges();
+
+                //Returns to Index action in this controller
+                return RedirectToAction("Index");
+            }
+            // if validation not met simply return the view
+            return View(obj);
+
+        }
     }
 }
