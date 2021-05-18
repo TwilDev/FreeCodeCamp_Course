@@ -112,5 +112,54 @@ namespace FCC_ASPNC_WebApp.Controllers
             return View(obj);
 
         }
+
+
+        // GET FOR DELETE - Takes id from the database element
+        public IActionResult Delete(int id)
+        {
+            //validation for checking id has been retrieved successfully
+            if (id == null || id == 0)
+            {
+                //if invalid return not found
+                return NotFound();
+            }
+            //Create a new var an dassign a DB SELECT query passing in the ID as a parameter to search
+            var obj = _db.Categories.Find(id);
+            // if the null
+            if (obj == null)
+            {
+                //return not found
+                return NotFound();
+            }
+            // if all validation is met return the delete view and pass retrieved object over to it
+            return View(obj);
+        }
+
+        // POST FOR DELETE
+        // Defining method as a HTTP POST 
+        [HttpPost]
+        //Built in mechanism where it appends an anti forgery token and there are no security tampers
+        [ValidateAntiForgeryToken]
+
+        public IActionResult DeletePost(int CategoryId)
+        {
+
+            //Find db item with the associated ID   
+            var obj = _db.Categories.Find(CategoryId);
+
+            if (obj == null)
+            {
+                //return NotFound();
+            }
+
+            //Delete from database
+            _db.Categories.Remove(obj);
+            //Commit to database 
+            _db.SaveChanges();
+            //Returns to Index action in this controller
+            return RedirectToAction("Index");
+
+        }
+
     }
 }

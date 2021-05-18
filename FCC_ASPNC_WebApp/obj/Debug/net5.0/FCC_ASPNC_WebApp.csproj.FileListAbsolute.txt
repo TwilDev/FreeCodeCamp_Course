@@ -434,3 +434,4 @@ E:\ASP.NET\FreeCodeCamp_Course\FCC_ASPNC_WebApp\obj\Debug\net5.0\Razor\Views\Cat
 E:\ASP.NET\FreeCodeCamp_Course\FCC_ASPNC_WebApp\obj\Debug\net5.0\Razor\Views\ApplicationType\Index.cshtml.g.cs
 E:\ASP.NET\FreeCodeCamp_Course\FCC_ASPNC_WebApp\obj\Debug\net5.0\Razor\Views\ApplicationType\Create.cshtml.g.cs
 E:\ASP.NET\FreeCodeCamp_Course\FCC_ASPNC_WebApp\obj\Debug\net5.0\Razor\Views\Category\Edit.cshtml.g.cs
+E:\ASP.NET\FreeCodeCamp_Course\FCC_ASPNC_WebApp\obj\Debug\net5.0\Razor\Views\Category\Delete.cshtml.g.cs
