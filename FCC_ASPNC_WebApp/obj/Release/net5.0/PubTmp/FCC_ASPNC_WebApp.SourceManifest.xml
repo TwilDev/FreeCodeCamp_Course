@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="E:\ASP.NET\FreeCodeCamp_Course\FCC_ASPNC_WebApp\obj\Release\net5.0\PubTmp\Out\" />
+  <dbfullsql path="E:\ASP.NET\FreeCodeCamp_Course\FCC_ASPNC_WebApp\obj\Release\net5.0\PubTmp\EFSQLScripts\FCC_ASPNC_WebApp.Data.ApplicationDbContext.sql" />
+</sitemanifest>

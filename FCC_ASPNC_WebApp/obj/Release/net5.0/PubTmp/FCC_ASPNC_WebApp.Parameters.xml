@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="FCCASPNCWebApp20210518145704" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\ASP\.NET\\FreeCodeCamp_Course\\FCC_ASPNC_WebApp\\obj\\Release\\net5\.0\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="FCC_ASPNC_WebApp.Data.ApplicationDbContext" description="" value="Data Source=tcp:fcc-aspnc-webappdbserver.database.windows.net,1433;Initial Catalog=FCC_ASPNC_WebApp_db;User Id=adminuser@fcc-aspnc-webappdbserver;Password=Admin123*" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^E:\\ASP\.NET\\FreeCodeCamp_Course\\FCC_ASPNC_WebApp\\obj\\Release\\net5\.0\\PubTmp\\EFSQLScripts\\FCC_ASPNC_WebApp\.Data\.ApplicationDbContext\.sql$" />
+  </parameter>
+</parameters>
