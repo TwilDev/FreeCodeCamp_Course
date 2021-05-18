@@ -27,7 +27,6 @@ namespace FCC_ASPNC_WebApp.Controllers
         }
 
 
-
         /// <summary>
         /// return view for index action
         /// </summary>
@@ -51,13 +50,20 @@ namespace FCC_ASPNC_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Category obj)
         {
-            //Add new information to database
-            _db.Categories.Add(obj);
-            //Commit to database 
-            _db.SaveChanges();
-            
-            //Returns to Index action in this controller
-            return RedirectToAction("Index");
+            //Checks if validation from model is met
+            if (ModelState.IsValid)
+            {
+                //Add new information to database
+                _db.Categories.Add(obj);
+                //Commit to database 
+                _db.SaveChanges();
+
+                //Returns to Index action in this controller
+                return RedirectToAction("Index");
+            }
+            // if validation not met simply return the view
+            return View(obj);
+
         }
     }
 }

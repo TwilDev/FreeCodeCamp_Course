@@ -30,13 +30,27 @@
                             <th>
                                 Display Order
                             </th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach(var obj in Model){
                         <tr>
                             <td width="50%">@obj.Name</td>
-                            <td width="50%">@obj.DisplayOrder</td>
+                            <td width="30%">@obj.DisplayOrder</td>
+                            <td class="text-center">
+                                <!-- Used for passing parameters over to an action using the retrieved obj from the DB -->
+                                <div class="w-75 btn-group" role="group">
+                                    <a asp-controller="Category" asp-route-Id="@obj.CategoryId" asp-action="Edit" class="btn btn-primary">
+                                        Edit
+                                    </a>
+
+                                    <a asp-controller="Category" asp-route-Id="@obj.CategoryId" asp-action="Delete" class="btn btn-danger">
+                                        Delete
+                                    </a>    
+                                </div>
+
+                            </td>
                         </tr>
                         }
                     </tbody>

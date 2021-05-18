@@ -5,6 +5,8 @@
 
 <form method="post" asp-action="Create">
     <div class="border p-3">
+        <!-- used for validation, using asp on validation error messages in category model -->
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group row">
             <h2 class="text-info p1-3">Add New Category</h2>
         </div>
@@ -17,6 +19,7 @@
                     </div>
                     <div class="col-8">
                         <input asp-for="Name" class="form-control" />
+                        <!-- used for validation, using asp on validation error messages in category model -->
                         <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
 
@@ -27,7 +30,8 @@
                     </div>
                     <div class="col-8">
                         <input asp-for="DisplayOrder" class="form-control" />
-                        <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+                        <!-- used for validation, using asp on validation error messages in category model -->
+                          <span asp-validation-for="DisplayOrder" class="text-danger"></span>
                     </div>
 
                 </div>
@@ -52,4 +56,10 @@
 
     </div>
 </form>
+
+@section Scripts{ 
+    
+@{ <partial name="_ValidationScriptsPartial" />}
+
+}
 
